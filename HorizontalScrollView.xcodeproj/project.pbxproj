@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		DA2753822A3070390096B177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753812A3070390096B177 /* AppDelegate.swift */; };
 		DA2753842A3070390096B177 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753832A3070390096B177 /* SceneDelegate.swift */; };
-		DA2753862A3070390096B177 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753852A3070390096B177 /* ViewController.swift */; };
 		DA2753892A3070390096B177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2753872A3070390096B177 /* Main.storyboard */; };
 		DA27538B2A30703B0096B177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA27538A2A30703B0096B177 /* Assets.xcassets */; };
 		DA27538E2A30703B0096B177 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA27538C2A30703B0096B177 /* LaunchScreen.storyboard */; };
+		DA27539C2A31655A0096B177 /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27539B2A31655A0096B177 /* HorizontalScrollView.swift */; };
+		DA27539E2A3165790096B177 /* HorizontalScrollHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27539D2A3165790096B177 /* HorizontalScrollHostingController.swift */; };
+		DA2753A02A316C430096B177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27539F2A316C430096B177 /* MainViewController.swift */; };
+		DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */; };
+		DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA27537E2A3070390096B177 /* HorizontalScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorizontalScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2753812A3070390096B177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA2753832A3070390096B177 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA2753852A3070390096B177 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA2753882A3070390096B177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA27538A2A30703B0096B177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA27538D2A30703B0096B177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA27538F2A30703B0096B177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA27539B2A31655A0096B177 /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
+		DA27539D2A3165790096B177 /* HorizontalScrollHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollHostingController.swift; sourceTree = "<group>"; };
+		DA27539F2A316C430096B177 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		DA2753802A3070390096B177 /* HorizontalScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				DA2753A12A316DC40096B177 /* Extensions */,
+				DA2753962A3162520096B177 /* ViewControllers */,
+				DA2753952A3162250096B177 /* Scenes */,
 				DA2753812A3070390096B177 /* AppDelegate.swift */,
 				DA2753832A3070390096B177 /* SceneDelegate.swift */,
-				DA2753852A3070390096B177 /* ViewController.swift */,
 				DA2753872A3070390096B177 /* Main.storyboard */,
 				DA27538A2A30703B0096B177 /* Assets.xcassets */,
 				DA27538C2A30703B0096B177 /* LaunchScreen.storyboard */,
 				DA27538F2A30703B0096B177 /* Info.plist */,
 			);
 			path = HorizontalScrollView;
+			sourceTree = "<group>";
+		};
+		DA2753952A3162250096B177 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DA27539B2A31655A0096B177 /* HorizontalScrollView.swift */,
+				DA27539D2A3165790096B177 /* HorizontalScrollHostingController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DA2753962A3162520096B177 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA27539F2A316C430096B177 /* MainViewController.swift */,
+				DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DA2753A12A316DC40096B177 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA2753862A3070390096B177 /* ViewController.swift in Sources */,
+				DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */,
+				DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */,
 				DA2753822A3070390096B177 /* AppDelegate.swift in Sources */,
+				DA27539C2A31655A0096B177 /* HorizontalScrollView.swift in Sources */,
 				DA2753842A3070390096B177 /* SceneDelegate.swift in Sources */,
+				DA27539E2A3165790096B177 /* HorizontalScrollHostingController.swift in Sources */,
+				DA2753A02A316C430096B177 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,13 +327,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DCPR5HD8KC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HorizontalScrollView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,13 +356,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DCPR5HD8KC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HorizontalScrollView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
