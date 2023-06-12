@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
@@ -17,21 +18,21 @@ class MainViewController: UIViewController {
     }
     
     func basicSetting() {
-        if #available(iOS 14, *) {
-            button.setTitle("iOS 14 이상", for: .normal)
+        if #available(iOS 14.5, *) {
+            button.setTitle("iOS 14.5 이상", for: .normal)
         }
         else {
-            button.setTitle("iOS 14 미만", for: .normal)
+            button.setTitle("iOS 14.5 미만", for: .normal)
         }
     }
     @IBAction func actNext(_ sender: Any) {
-        if #available(iOS 14, *) {
-            // [iOS 14.0 버전 이상 인 경우 분기 처리 내용]
+        if #available(iOS 14.5, *) {
+            // [iOS 14.5 버전 이상 인 경우 분기 처리 내용]
             guard let nextVC = viewController("HorizontalScrollHostingController") as? HorizontalScrollHostingController else {return}
             navigationController?.pushViewController(nextVC, animated: false)
         }
         else {
-            // [iOS 14.0 버전 미만 인 경우 분기 처리 내용]
+            // [iOS 14.5 버전 미만 인 경우 분기 처리 내용]
             guard let nextVC = viewController("HorizontalScrollViewController") as? HorizontalScrollViewController else {return}
             navigationController?.pushViewController(nextVC, animated: false)
         }

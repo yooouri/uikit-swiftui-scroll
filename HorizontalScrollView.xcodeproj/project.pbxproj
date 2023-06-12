@@ -17,6 +17,15 @@
 		DA2753A02A316C430096B177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27539F2A316C430096B177 /* MainViewController.swift */; };
 		DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */; };
 		DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */; };
+		DAFF06752A32FC57006E57D5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06742A32FC57006E57D5 /* CardView.swift */; };
+		DAFF06782A32FCFA006E57D5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DAFF06772A32FCFA006E57D5 /* Then */; };
+		DAFF067B2A32FD0B006E57D5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DAFF067A2A32FD0B006E57D5 /* SnapKit */; };
+		DAFF067D2A32FD66006E57D5 /* UIVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF067C2A32FD66006E57D5 /* UIVIew+Extension.swift */; };
+		DAFF067F2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF067E2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift */; };
+		DAFF068B2A36E5E1006E57D5 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF068A2A36E5E1006E57D5 /* Color+Ext.swift */; };
+		DAFF068D2A36E5F9006E57D5 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF068C2A36E5F9006E57D5 /* PageControl.swift */; };
+		DAFF06912A36E60C006E57D5 /* AdaptivePagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */; };
+		DAFF06992A36FEA4006E57D5 /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06982A36FEA4006E57D5 /* ImageCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +41,13 @@
 		DA27539F2A316C430096B177 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollViewController.swift; sourceTree = "<group>"; };
+		DAFF06742A32FC57006E57D5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DAFF067C2A32FD66006E57D5 /* UIVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extension.swift"; sourceTree = "<group>"; };
+		DAFF067E2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		DAFF068A2A36E5E1006E57D5 /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		DAFF068C2A36E5F9006E57D5 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdaptivePagingScrollView.swift; path = HorizontalScrollView/SwiftUI/Paging/AdaptivePagingScrollView.swift; sourceTree = SOURCE_ROOT; };
+		DAFF06982A36FEA4006E57D5 /* ImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFF06782A32FCFA006E57D5 /* Then in Frameworks */,
+				DAFF067B2A32FD0B006E57D5 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,9 +82,8 @@
 		DA2753802A3070390096B177 /* HorizontalScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				DA2753A12A316DC40096B177 /* Extensions */,
-				DA2753962A3162520096B177 /* ViewControllers */,
-				DA2753952A3162250096B177 /* Scenes */,
+				DA2753962A3162520096B177 /* UIKit */,
+				DA2753952A3162250096B177 /* SwiftUI */,
 				DA2753812A3070390096B177 /* AppDelegate.swift */,
 				DA2753832A3070390096B177 /* SceneDelegate.swift */,
 				DA2753872A3070390096B177 /* Main.storyboard */,
@@ -77,16 +94,38 @@
 			path = HorizontalScrollView;
 			sourceTree = "<group>";
 		};
-		DA2753952A3162250096B177 /* Scenes */ = {
+		DA2753952A3162250096B177 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				DA27539B2A31655A0096B177 /* HorizontalScrollView.swift */,
-				DA27539D2A3165790096B177 /* HorizontalScrollHostingController.swift */,
+				DAFF069B2A3700CD006E57D5 /* Paging */,
+				DAFF069A2A3700AC006E57D5 /* Extensions */,
+				DAFF06732A32FC1B006E57D5 /* Views */,
+				DAFF06722A32FC0D006E57D5 /* HostingControllers */,
 			);
-			path = Scenes;
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
-		DA2753962A3162520096B177 /* ViewControllers */ = {
+		DA2753962A3162520096B177 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				DA2753A12A316DC40096B177 /* Extensions */,
+				DAFF06712A32FC05006E57D5 /* Views */,
+				DAFF06702A32FBF6006E57D5 /* ViewControllers */,
+				DAFF067E2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		DA2753A12A316DC40096B177 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */,
+				DAFF067C2A32FD66006E57D5 /* UIVIew+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAFF06702A32FBF6006E57D5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				DA27539F2A316C430096B177 /* MainViewController.swift */,
@@ -95,12 +134,46 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		DA2753A12A316DC40096B177 /* Extensions */ = {
+		DAFF06712A32FC05006E57D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */,
+				DAFF06742A32FC57006E57D5 /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAFF06722A32FC0D006E57D5 /* HostingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA27539D2A3165790096B177 /* HorizontalScrollHostingController.swift */,
+			);
+			path = HostingControllers;
+			sourceTree = "<group>";
+		};
+		DAFF06732A32FC1B006E57D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA27539B2A31655A0096B177 /* HorizontalScrollView.swift */,
+				DAFF06982A36FEA4006E57D5 /* ImageCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAFF069A2A3700AC006E57D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAFF068A2A36E5E1006E57D5 /* Color+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAFF069B2A3700CD006E57D5 /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				DAFF068C2A36E5F9006E57D5 /* PageControl.swift */,
+				DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */,
+			);
+			path = Paging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +192,10 @@
 			dependencies = (
 			);
 			name = HorizontalScrollView;
+			packageProductDependencies = (
+				DAFF06772A32FCFA006E57D5 /* Then */,
+				DAFF067A2A32FD0B006E57D5 /* SnapKit */,
+			);
 			productName = HorizontalScrollView;
 			productReference = DA27537E2A3070390096B177 /* HorizontalScrollView.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +224,10 @@
 				Base,
 			);
 			mainGroup = DA2753752A3070390096B177;
+			packageReferences = (
+				DAFF06762A32FCFA006E57D5 /* XCRemoteSwiftPackageReference "Then" */,
+				DAFF06792A32FD0B006E57D5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DA27537F2A3070390096B177 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,13 +255,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFF06912A36E60C006E57D5 /* AdaptivePagingScrollView.swift in Sources */,
+				DAFF067F2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift in Sources */,
 				DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */,
+				DAFF068B2A36E5E1006E57D5 /* Color+Ext.swift in Sources */,
 				DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */,
 				DA2753822A3070390096B177 /* AppDelegate.swift in Sources */,
 				DA27539C2A31655A0096B177 /* HorizontalScrollView.swift in Sources */,
 				DA2753842A3070390096B177 /* SceneDelegate.swift in Sources */,
 				DA27539E2A3165790096B177 /* HorizontalScrollHostingController.swift in Sources */,
+				DAFF06992A36FEA4006E57D5 /* ImageCardView.swift in Sources */,
+				DAFF06752A32FC57006E57D5 /* CardView.swift in Sources */,
 				DA2753A02A316C430096B177 /* MainViewController.swift in Sources */,
+				DAFF068D2A36E5F9006E57D5 /* PageControl.swift in Sources */,
+				DAFF067D2A32FD66006E57D5 /* UIVIew+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +488,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAFF06762A32FCFA006E57D5 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		DAFF06792A32FD0B006E57D5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAFF06772A32FCFA006E57D5 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAFF06762A32FCFA006E57D5 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		DAFF067A2A32FD0B006E57D5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAFF06792A32FD0B006E57D5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA2753762A3070390096B177 /* Project object */;
 }
