@@ -9,7 +9,6 @@ import SwiftUI
 
 
 
-
 struct AdaptivePagingScrollView: View {
     
     private let items: [AnyView]
@@ -90,7 +89,7 @@ struct AdaptivePagingScrollView: View {
         .onAppear {
             currentScrollOffset = countOffset(for: currentPageIndex)
         }
-        .background(Color.black.opacity(0.00001)) // hack - this allows gesture recognizing even when background is transparent
+//        .background(Color.black.opacity(0.00001)) // hack - this allows gesture recognizing even when background is transparent
         .frame(width: contentWidth)
         .offset(x: self.currentScrollOffset, y: 0)
         .simultaneousGesture(

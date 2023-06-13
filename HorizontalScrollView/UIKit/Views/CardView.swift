@@ -24,9 +24,12 @@ class CardView: UIView {
     
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: 260, height: 440))
+        super.init(frame: frame) //CGRect(x: 0, y: 0, width: 260, height: 440)
         
         backgroundColor = .red
+        clipsToBounds = false
+        layer.cornerRadius = 8
+        
         configureCardView()
         
     }

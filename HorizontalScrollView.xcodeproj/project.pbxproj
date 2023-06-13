@@ -21,7 +21,6 @@
 		DAFF06782A32FCFA006E57D5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DAFF06772A32FCFA006E57D5 /* Then */; };
 		DAFF067B2A32FD0B006E57D5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DAFF067A2A32FD0B006E57D5 /* SnapKit */; };
 		DAFF067D2A32FD66006E57D5 /* UIVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF067C2A32FD66006E57D5 /* UIVIew+Extension.swift */; };
-		DAFF067F2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF067E2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift */; };
 		DAFF068B2A36E5E1006E57D5 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF068A2A36E5E1006E57D5 /* Color+Ext.swift */; };
 		DAFF068D2A36E5F9006E57D5 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF068C2A36E5F9006E57D5 /* PageControl.swift */; };
 		DAFF06912A36E60C006E57D5 /* AdaptivePagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */; };
@@ -43,7 +42,6 @@
 		DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollViewController.swift; sourceTree = "<group>"; };
 		DAFF06742A32FC57006E57D5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		DAFF067C2A32FD66006E57D5 /* UIVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extension.swift"; sourceTree = "<group>"; };
-		DAFF067E2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		DAFF068A2A36E5E1006E57D5 /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		DAFF068C2A36E5F9006E57D5 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdaptivePagingScrollView.swift; path = HorizontalScrollView/SwiftUI/Paging/AdaptivePagingScrollView.swift; sourceTree = SOURCE_ROOT; };
@@ -111,7 +109,6 @@
 				DA2753A12A316DC40096B177 /* Extensions */,
 				DAFF06712A32FC05006E57D5 /* Views */,
 				DAFF06702A32FBF6006E57D5 /* ViewControllers */,
-				DAFF067E2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -256,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAFF06912A36E60C006E57D5 /* AdaptivePagingScrollView.swift in Sources */,
-				DAFF067F2A36ABA9006E57D5 /* CollectionViewFlowLayout.swift in Sources */,
 				DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */,
 				DAFF068B2A36E5E1006E57D5 /* Color+Ext.swift in Sources */,
 				DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */,

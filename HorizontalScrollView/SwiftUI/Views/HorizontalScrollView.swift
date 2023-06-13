@@ -16,7 +16,7 @@ struct HorizontalScrollView: View {
     @State private var activePageIndex: Int = 0
     
     let itemWidth: CGFloat = 260
-    let itemPadding: CGFloat = 20
+    let itemPadding: CGFloat = 30
     
     var body: some View {
         ZStack {
@@ -25,6 +25,7 @@ struct HorizontalScrollView: View {
                         ForEach(cards, id: \.self) { card in
                             GeometryReader { screen in
                                 ImageCardView()
+                                    .offset(y:activePageIndex == cards.firstIndex(of: card) ?? 0 ? -30 : 0)
                                 .scaleEffect(activePageIndex == cards.firstIndex(of: card) ?? 0 ? 1.05 : 1)
                             }
                             .frame(width: self.itemWidth)
@@ -33,6 +34,7 @@ struct HorizontalScrollView: View {
                 }
             
         }
+        .frame(width: 200, height: 500, alignment: .topLeading) //vertical center
     }
 }
 @available(iOS 13.0, *)
