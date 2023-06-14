@@ -25,6 +25,7 @@
 		DAFF068D2A36E5F9006E57D5 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF068C2A36E5F9006E57D5 /* PageControl.swift */; };
 		DAFF06912A36E60C006E57D5 /* AdaptivePagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */; };
 		DAFF06992A36FEA4006E57D5 /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06982A36FEA4006E57D5 /* ImageCardView.swift */; };
+		DAFF069F2A395B0A006E57D5 /* CardCollectionViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF069E2A395B0A006E57D5 /* CardCollectionViewFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DAFF068C2A36E5F9006E57D5 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		DAFF06902A36E60C006E57D5 /* AdaptivePagingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdaptivePagingScrollView.swift; path = HorizontalScrollView/SwiftUI/Paging/AdaptivePagingScrollView.swift; sourceTree = SOURCE_ROOT; };
 		DAFF06982A36FEA4006E57D5 /* ImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCardView.swift; sourceTree = "<group>"; };
+		DAFF069E2A395B0A006E57D5 /* CardCollectionViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				DAFF06742A32FC57006E57D5 /* CardView.swift */,
+				DAFF069E2A395B0A006E57D5 /* CardCollectionViewFlow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				DAFF06752A32FC57006E57D5 /* CardView.swift in Sources */,
 				DA2753A02A316C430096B177 /* MainViewController.swift in Sources */,
 				DAFF068D2A36E5F9006E57D5 /* PageControl.swift in Sources */,
+				DAFF069F2A395B0A006E57D5 /* CardCollectionViewFlow.swift in Sources */,
 				DAFF067D2A32FD66006E57D5 /* UIVIew+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
