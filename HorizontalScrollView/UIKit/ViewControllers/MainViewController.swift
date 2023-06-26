@@ -33,7 +33,8 @@ class MainViewController: UIViewController {
         }
         else {
             // [iOS 14.5 버전 미만 인 경우 분기 처리 내용]
-            guard let nextVC = viewController("HorizontalScrollViewController") as? HorizontalScrollViewController else {return}
+//            guard let nextVC = viewController("HorizontalScrollViewController") as? HorizontalScrollViewController else {return}
+            guard let nextVC = viewController("TestViewController") as? TestViewController else {return}
             navigationController?.pushViewController(nextVC, animated: false)
         }
     }

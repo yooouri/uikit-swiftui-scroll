@@ -17,6 +17,8 @@
 		DA2753A02A316C430096B177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA27539F2A316C430096B177 /* MainViewController.swift */; };
 		DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */; };
 		DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */; };
+		DA517F2F2A4562BD00E754B0 /* HorizontalRatioScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA517F2E2A4562BD00E754B0 /* HorizontalRatioScrollViewController.swift */; };
+		DA517F312A45836000E754B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA517F302A45836000E754B0 /* TestViewController.swift */; };
 		DAFF06752A32FC57006E57D5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF06742A32FC57006E57D5 /* CardView.swift */; };
 		DAFF06782A32FCFA006E57D5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = DAFF06772A32FCFA006E57D5 /* Then */; };
 		DAFF067B2A32FD0B006E57D5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DAFF067A2A32FD0B006E57D5 /* SnapKit */; };
@@ -41,6 +43,8 @@
 		DA27539F2A316C430096B177 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DA2753A22A316DF00096B177 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollViewController.swift; sourceTree = "<group>"; };
+		DA517F2E2A4562BD00E754B0 /* HorizontalRatioScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRatioScrollViewController.swift; sourceTree = "<group>"; };
+		DA517F302A45836000E754B0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		DAFF06742A32FC57006E57D5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		DAFF067C2A32FD66006E57D5 /* UIVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extension.swift"; sourceTree = "<group>"; };
 		DAFF068A2A36E5E1006E57D5 /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			children = (
 				DA27539F2A316C430096B177 /* MainViewController.swift */,
 				DA2753A42A316E7D0096B177 /* HorizontalScrollViewController.swift */,
+				DA517F2E2A4562BD00E754B0 /* HorizontalRatioScrollViewController.swift */,
+				DA517F302A45836000E754B0 /* TestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -255,7 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA517F2F2A4562BD00E754B0 /* HorizontalRatioScrollViewController.swift in Sources */,
 				DAFF06912A36E60C006E57D5 /* AdaptivePagingScrollView.swift in Sources */,
+				DA517F312A45836000E754B0 /* TestViewController.swift in Sources */,
 				DA2753A32A316DF00096B177 /* UIViewController+Extension.swift in Sources */,
 				DAFF068B2A36E5E1006E57D5 /* Color+Ext.swift in Sources */,
 				DA2753A52A316E7D0096B177 /* HorizontalScrollViewController.swift in Sources */,

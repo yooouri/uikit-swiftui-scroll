@@ -13,95 +13,203 @@ class HorizontalScrollViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let width = 260
-    let height = 440
-    var index: Int = 0
-    var high:CGFloat = 25
-    let cardCnt = 10
+    private let width = 260
+    private let height = 440
+    private var index: Int = 0
+    private var high:CGFloat = 30
+    private let cardCnt = 10
+    private let space:CGFloat = 30
     
     lazy var margin = (view.frame.width - CGFloat(width)) / 2
     
-    lazy var contentOrigin = collectionView.cellForItem(at: IndexPath(row: 1, section: 0))?.frame.origin.y
-    var once = true
+    private var contentOrigin: Double? //collectionView.cellForItem(at: IndexPath(row: 1, section: 0))?.frame.origin.y
+    private var once = true
+    
+    private var lastOffSet: CGFloat = 0
+    private var direction:ScrollDirection = .right
+    enum ScrollDirection {
+        case left
+        case right
+    }
+    private var temp: CGFloat = 81.5
+    private var std:CGFloat = 0.5
+    private var upY: CGFloat = 0
+    private var downY: CGFloat = 0
+    
+    private var endScroll = true
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         configureLayout()
-       
-        //        configureLayoutGM()
+        
         collectionView.dataSource = self
         collectionView.delegate = self
-        //        collectionView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 20, right: 15)
         
         collectionView.decelerationRate = .fast
-
+//        getStand()
         
-
         
     }
-  
     
-    func configureLayoutGM() {
-        let collectionViewLayout = CardCollectionViewFlow()
-        collectionView.collectionViewLayout = collectionViewLayout
-    }
+    
     
     func configureLayout() {
         let collectionViewLayout: UICollectionViewFlowLayout = {
             let layout = UICollectionViewFlowLayout()
             layout.itemSize = CGSize(width: width, height: height)
-            layout.minimumLineSpacing = 30
+            layout.minimumLineSpacing = space
             layout.sectionInset = UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin)
             layout.scrollDirection = .horizontal
             
             return layout
         }()
         collectionView.collectionViewLayout = collectionViewLayout
+        print("collectionview frame", collectionView.frame.size.width)
+        
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
-        //collectionview item size
-        let cellWidthIncludingSpaing = layout.itemSize.width + layout.minimumLineSpacing
+    func getStand() {
+        let scrollViewContentWidth = ((width + Int(space)) * cardCnt - Int(space) + Int(view.frame.width) - width)/10
+        print("scrollViewWidth",scrollViewContentWidth)
+        print("std", high/CGFloat(scrollViewContentWidth))
+//        std = high/CGFloat(scrollViewContentWidth)
+        std = high / (CGFloat(width)+CGFloat(space))
         
-        //이동한 x좌표 값과 item의 크기를 비교 후 페이징 값 설정
-        let estimateIndex = scrollView.contentOffset.x / cellWidthIncludingSpaing
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        //        focusUpAnimation(index: self.index)
+        //        focusAroundAnimation(index: self.index-1)
+        //        focusAroundAnimation(index: self.index+1)
+        endScroll.toggle() //false
+        //        upY = temp
+        //        downY = temp-high
+    }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("scrollView.contentOffset.x",scrollView.contentOffset.x)
+       
+       
+        if !endScroll {
+            //            if  upY >= temp-high {
+            //                upY -= std
+            //            }
+            //            if temp-high <= downY && downY < temp {
+            //                downY += std
+            //            }
+
+            std=30/290
+//            print("aaaaaa",index)
+            if lastOffSet > scrollView.contentOffset.x {
+//                if lastOffSet-scrollView.contentOffset.x > 0 {
+//                    let ratio = abs(lastOffSet-scrollView.contentOffset.x)*high/(CGFloat(width)+CGFloat(space))
+//                    print("ratio", ratio)
+//                    std = ratio
+//                }
+                direction = .left
+                //                UIView.animate(withDuration: 0.1, delay: 0, options: .allowAnimatedContent, animations: { [self] in
+                //                    print("lele upY",upY)
+                //                    print("lele downY",downY)
+                //                    self.collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = upY
+                //                    self.collectionView.cellForItem(at: IndexPath(row: index-1, section: 0))?.frame.origin.y = downY
+
+//                if index != 0{
+                    print("left index y down")
+                        collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = collectionView.cellForItem(at: IndexPath(row: index, section: 0))!.frame.origin.y+std
+//
+
+//                }
+//                if CGFloat(collectionView.cellForItem(at: IndexPath(row: index, section: 0))!.frame.origin.y) < temp {
+                    print("left index-1 y up")
+                    collectionView.cellForItem(at: IndexPath(row: index-1, section: 0))?.frame.origin.y = collectionView.cellForItem(at: IndexPath(row: index-1, section: 0))!.frame.origin.y-std
+//                }
+
+
+
+                //                })
+
+            }else{
+//                if scrollView.contentOffset.x-lastOffSet > 0 {
+//                    let ratio = abs(scrollView.contentOffset.x-lastOffSet)*high/(CGFloat(width)+CGFloat(space))
+//                    print("ratio", ratio)
+//                    std = ratio
+//                }
+                
+                direction = .right
+                //                UIView.animate(withDuration: 0.1, delay: 0, options: .allowAnimatedContent, animations: { [self] in
+
+//                if CGFloat(collectionView.cellForItem(at: IndexPath(row: index, section: 0))!.frame.origin.y) < temp  {
+
+                print("right index+1 y up")
+                    collectionView.cellForItem(at: IndexPath(row: index+1, section: 0))?.frame.origin.y = collectionView.cellForItem(at: IndexPath(row: index+1, section: 0))!.frame.origin.y-std
+//                }
+//                if temp-high < CGFloat(collectionView.cellForItem(at: IndexPath(row: index+1, section: 0))!.frame.origin.y) {
+                print("right index y down",collectionView.cellForItem(at: IndexPath(row: index, section: 0))!.frame.origin.y)
+                    collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = collectionView.cellForItem(at: IndexPath(row: index, section: 0))!.frame.origin.y+std
+//                }
+
+                //                })
+            }
+            lastOffSet = scrollView.contentOffset.x
+        }
+
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("end!!!", scrollView.contentOffset.x)
+        endScroll.toggle() //true
+        guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
+        //        //collectionview item size
+        let cellWidthIncludingSpaing = layout.itemSize.width + layout.minimumLineSpacing
+        //
+        //        //이동한 x좌표 값과 item의 크기를 비교 후 페이징 값 설정
+        let estimateIndex = scrollView.contentOffset.x / cellWidthIncludingSpaing
+        //        print("velocity", velocity.x)
         if velocity.x > 0{
             if index != cardCnt-1 { //마지막 인덱스 벗어나지 못하게
                 index = Int(ceil(estimateIndex))
             }
-            focusAroundAnimation(index: self.index-1)
-  
+            //            focusAroundAnimation(index: self.index-1)
+
         }else if velocity.x < 0 {
             if index != 0 { //처음 인덱스 벗어나지 못하게
                 index = Int(floor(estimateIndex))
             }
-            focusAroundAnimation(index: self.index+1)
-            
+            //            focusAroundAnimation(index: self.index+1)
+
         }else {
             index = Int(round(estimateIndex))
-            focusUpAnimation(index: self.index)//스크롤 이동 안 했을 때 y값 유지
+            //            focusUpAnimation(index: self.index)//스크롤 이동 안 했을 때 y값 유지
         }
-        
+
         targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpaing, y:  0)//scroll.offset.x
-        focusUpAnimation(index: self.index) // collectionview.cell.off.y
-            
-        
+//        if direction == .right{
+//            focusAroundAnimation(index: index-1)
+//            focusUpAnimation(index: index)
+//        }else{
+//            focusAroundAnimation(index: index+1)
+//            focusUpAnimation(index: index)
+//        }
+
     }
     
+    
     func focusUpAnimation(index: Int){
-        UIView.animate(withDuration: 0.3, delay: 0, options: .allowAnimatedContent, animations: {
-            self.collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = self.contentOrigin!-self.high
+        UIView.animate(withDuration: 0.3, delay: 0, options: .allowAnimatedContent, animations: { [self] in
+            collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = contentOrigin!-high
         })
     }
+    
     func focusAroundAnimation(index: Int){
-        UIView.animate(withDuration: 0.3, delay: 0, options: .allowAnimatedContent, animations: {
-            self.collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = self.contentOrigin!
+        UIView.animate(withDuration: 0.3, delay: 0,  animations: { [self] in
+            collectionView.cellForItem(at: IndexPath(row: index, section: 0))?.frame.origin.y = contentOrigin!
         })
     }
-
+    
     
 }
 
@@ -121,11 +229,14 @@ extension HorizontalScrollViewController: UICollectionViewDataSource {
             $0.width.equalTo(width)
             $0.height.equalTo(height)
         }
+
         if indexPath.row == 0 && once {
+            contentOrigin = cell.frame.origin.y
             cell.frame.origin.y = cell.frame.origin.y-high
             once.toggle()
+            print("cell contentOrigin", contentOrigin)
         }
-    
+        
         let label = UILabel().then {
             $0.text = "\(indexPath.row)"
         }
@@ -133,8 +244,7 @@ extension HorizontalScrollViewController: UICollectionViewDataSource {
         label.snp.makeConstraints {
             $0.leading.equalToSuperview()
         }
-        //        cell.layer.borderColor = UIColor.gray.cgColor
-        //        cell.layer.borderWidth = 1
+        
         
         return cell
     }
@@ -143,19 +253,5 @@ extension HorizontalScrollViewController: UICollectionViewDataSource {
 }
 
 extension HorizontalScrollViewController: UICollectionViewDelegateFlowLayout {
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        return 30
-    //    }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //        return 30
-    //    }
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        let itemSpace:CGFloat = 30
-    //        let width = view.frame.width * 0.5 //(collectionView.frame.width - itemSpace * 2 - 30) / 3
-    //        let height = view.frame.height * 0.7
-    //
-    //        return CGSize(width: 260, height: 440)
-    //    }
-    
+
 }

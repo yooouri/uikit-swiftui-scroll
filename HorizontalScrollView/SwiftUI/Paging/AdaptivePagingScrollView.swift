@@ -88,6 +88,7 @@ struct AdaptivePagingScrollView: View {
         }
         .onAppear {
             currentScrollOffset = countOffset(for: currentPageIndex)
+            print("currentScrollOffset",currentScrollOffset)
         }
 //        .background(Color.black.opacity(0.00001)) // hack - this allows gesture recognizing even when background is transparent
         .frame(width: contentWidth)
@@ -113,10 +114,7 @@ struct AdaptivePagingScrollView: View {
                     
                     gestureDragOffset = 0
                     
-                    withAnimation(.interpolatingSpring(mass: 0.1,
-                                                       stiffness: 20,
-                                                       damping: 1.5,
-                                                       initialVelocity: 0)) {
+                    withAnimation(.linear(duration: 0.4)) {
                         self.currentPageIndex = newPageIndex
                         self.currentScrollOffset = self.countCurrentScrollOffset()
                     }

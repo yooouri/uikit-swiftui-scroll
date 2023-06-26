@@ -19,14 +19,15 @@ struct HorizontalScrollView: View {
     let itemPadding: CGFloat = 30
     
     var body: some View {
+        let _  = print("activePageIndex",activePageIndex)
         ZStack {
                 GeometryReader { geometry in
                     AdaptivePagingScrollView(currentPageIndex: self.$activePageIndex, itemsAmount: self.cards.count, itemWidth: self.itemWidth, itemPadding: itemPadding, pageWidth: geometry.size.width) {
                         ForEach(cards, id: \.self) { card in
                             GeometryReader { screen in
-                                ImageCardView()
+                                ImageCardView(cardIndex: activePageIndex)
                                     .offset(y:activePageIndex == cards.firstIndex(of: card) ?? 0 ? -30 : 0)
-                                .scaleEffect(activePageIndex == cards.firstIndex(of: card) ?? 0 ? 1.05 : 1)
+//                                .scaleEffect(activePageIndex == cards.firstIndex(of: card) ?? 0 ? 1.05 : 1)
                             }
                             .frame(width: self.itemWidth)
                         }
