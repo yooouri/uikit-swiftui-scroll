@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
             // [iOS 14.5 버전 이상 인 경우 분기 처리 내용]
             guard let nextVC = viewController("HorizontalScrollHostingController") as? HorizontalScrollHostingController else {return}
             navigationController?.pushViewController(nextVC, animated: false)
+
         }
         else {
             // [iOS 14.5 버전 미만 인 경우 분기 처리 내용]

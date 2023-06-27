@@ -27,8 +27,8 @@ final class CardCollectionViewFlow: UICollectionViewFlowLayout {
         print("collectionView.frame.size",collectionView.frame.size)
         let collectionViewSize = collectionView.frame.size
         
-        let itemWidth = collectionViewSize.width * 0.72
-        let itemHeight = collectionViewSize.height * 0.8
+        let itemWidth = collectionViewSize.width * 0.7
+        let itemHeight = collectionViewSize.height * 0.7
         itemSize = CGSize(width: itemWidth, height: itemHeight)
         
         let xInset = (collectionViewSize.width - itemWidth) / 2
@@ -59,8 +59,8 @@ final class CardCollectionViewFlow: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else {
             return attributes
         }
-//        print("attributes", attributes)
-//        print("attributes.center.x", attributes.center.x)
+        print("attributes", attributes)
+        print("attributes.center.x", attributes.center.x)
         let collectionViewCenterWidth = collectionView.frame.size.width / 2
         let contentOffset = collectionView.contentOffset.x
         let center = attributes.center.x - contentOffset
@@ -68,11 +68,11 @@ final class CardCollectionViewFlow: UICollectionViewFlowLayout {
         print("contentOffset", contentOffset)
         print("collectionView.frame.size.width", collectionView.frame.size.width)
         
-        let maxDistance = (itemSize.width + minimumLineSpacing) * 2
+        let maxDistance = (itemSize.width + minimumLineSpacing)
         let distance = min(abs(collectionViewCenterWidth - center), maxDistance)
         
         let ratio = (maxDistance - distance) / maxDistance
-        let sideCellHeightGap: CGFloat = 60
+        let sideCellHeightGap: CGFloat = 30
         let heightRatio = sideCellHeightGap - ratio * sideCellHeightGap
         
         print("maxDistance", maxDistance , distance)
@@ -83,5 +83,6 @@ final class CardCollectionViewFlow: UICollectionViewFlowLayout {
         
         return attributes
     }
+    
 }
 

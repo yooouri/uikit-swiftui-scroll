@@ -27,6 +27,8 @@ class HorizontalRatioScrollViewController: UIViewController {
         ratioCollectionView.dataSource = self
         ratioCollectionView.delegate = self
         
+        ratioCollectionView.decelerationRate = .fast
+        
     }
     
     
@@ -36,11 +38,13 @@ class HorizontalRatioScrollViewController: UIViewController {
     }
     
     
+ 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         guard let layout = self.ratioCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {return}
         //collectionview item size
         let cellWidthIncludingSpaing = layout.itemSize.width + layout.minimumLineSpacing
+        print("cellWidthIncludingSpaing",cellWidthIncludingSpaing)
         
         //이동한 x좌표 값과 item의 크기를 비교 후 페이징 값 설정
         let estimateIndex = scrollView.contentOffset.x / cellWidthIncludingSpaing
